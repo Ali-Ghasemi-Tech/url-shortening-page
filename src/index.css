@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero>h1{
+    font-size: clamp(1em , 4vw , 7em);
+}
+
+.casual-text{
+    font-size: clamp(0.2em , 1.2vw , 2em);
+}
+
+.button-text{
+    font-size: clamp(0.1em , 1vw , 2em);
+}
+
+.img{
+    width: clamp(1em , 50vw , 70em);
+}
