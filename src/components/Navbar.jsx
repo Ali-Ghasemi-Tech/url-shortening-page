@@ -14,8 +14,8 @@ const Navbar = () => {
         </div>
         </div>
         <div className='flex gap-10 text-lg'>
-            <button className='text-gray-400 font-bold '>Login</button>
-            <Button content={'SignUp'} />
+            <button className='text-gray-400 font-bold navbar-text'>Login</button>
+            <Button content={'Sign Up'} fontSize ='clamp(0.1em , 1vw , 1em)' />
         </div>
     </>
         

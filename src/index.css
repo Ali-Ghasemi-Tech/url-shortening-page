@@ -10,10 +10,10 @@
     font-size: clamp(0.2em , 1.2vw , 2em);
 }
 
-.button-text{
-    font-size: clamp(0.1em , 1vw , 2em);
+.img{
+    width: clamp(1em , 40vw , 70em);
 }
 
-.img{
-    width: clamp(1em , 50vw , 70em);
+.hero-height{
+    height: calc(clamp(1em , 40vw , 70em)/1.52) ;
 }
