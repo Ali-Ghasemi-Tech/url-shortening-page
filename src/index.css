@@ -17,3 +17,19 @@
 .hero-height{
     height: calc(clamp(1em , 40vw , 70em)/1.52) ;
 }
+
+.statistics-text{
+    font-size: clamp(0.2em , 2.5vw , 5em);
+}
+
+.card-title{
+    font-size: clamp(0.5em , 1.5vw , 4em);
+}
+
+.card-img{
+    width: clamp(0.5em , 3vw , 4em);
+}
+
+.card-text{
+    font-size: clamp(0.5em , 1vw , 3em);
+}
