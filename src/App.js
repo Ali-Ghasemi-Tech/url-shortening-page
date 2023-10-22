@@ -1,6 +1,7 @@
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Statistics from './components/Statistics';
+import GetStarted from './components/GetStarted';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       </main>
       <div className=' flex-col w-full bg-gray-200 flex justify-center items-center'>
         <Statistics />
+      </div>
+      <div className=' bg-gray-800 w-full'>
+        <GetStarted/>
       </div>
     </body>
   );
