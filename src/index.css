@@ -33,3 +33,6 @@
 .card-text{
     font-size: clamp(0.5em , 1vw , 3em);
 }
+.hover-effect:hover{
+    fill: rgb(83, 105, 226);
+}

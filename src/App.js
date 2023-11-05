@@ -2,10 +2,11 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Statistics from './components/Statistics';
 import GetStarted from './components/GetStarted';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <body className='flex flex-col items-center pt-[60px] pb-20'>
+    <body className='flex flex-col items-center pt-[60px] '>
       <header className='w-[80%] flex justify-between'>
         <Navbar />
       </header>
@@ -17,6 +18,9 @@ function App() {
       </div>
       <div className=' bg-gray-800 w-full'>
         <GetStarted/>
+      </div>
+      <div className='w-full'>
+        <Footer/>
       </div>
     </body>
   );
