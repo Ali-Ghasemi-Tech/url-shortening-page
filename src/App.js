@@ -4,7 +4,9 @@ import Statistics from './components/Statistics';
 import GetStarted from './components/GetStarted';
 import Footer from './components/Footer';
 
-function App() {
+function  App() {
+  
+
   return (
     <body className='flex flex-col items-center pt-[60px] '>
       <header className='w-[80%] flex justify-between'>
