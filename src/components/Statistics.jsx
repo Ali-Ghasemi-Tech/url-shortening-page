@@ -38,25 +38,27 @@ const Statistics = () => {
   console.log(brandRecognitionContent);
   return (
     <>
-        <div className='flex flex-col justify-center items-center w-[35%] text-center mt-[13%] mb-[5%]'>
-            <h1 className='font-bold statistics-text whitespace-nowrap overflow-hidden pb-2'>Advanced Statistics</h1>
-            <span className='casual-text text-gray-500'>Track how your links are performing across the web with our advanced statistics dashboard</span>
-        </div>
-        <div className='w-[80%] bg-teal-400 h-2 mt-[10%] mb-[20%] relative'>
-        <Statistics_card
-          img={brandRecognitionimg}
-          content={brandRecognitionContent}
-          position={brandRecognition} />
-        <Statistics_card 
-          img={detailedRecordsimg}
-          content={detailedRecordsContent}
-          position={detailedRecords}/>
-        <Statistics_card
-          img={fullyCustomizableimg}
-          content={fullyCustomizableContent} 
-          position={fullyCustomizable}/>
+      
+      <div className='flex flex-col justify-center items-center w-[35%] text-center mt-[13%] mb-[5%]'>
+          
+          <h1 className='font-bold statistics-text whitespace-nowrap overflow-hidden pb-2'>Advanced Statistics</h1>
+          <span className='casual-text text-gray-500'>Track how your links are performing across the web with our advanced statistics dashboard</span>
+      </div>
+      <div className='w-[80%] bg-teal-400 h-2 mt-[10%] mb-[20%] relative'>
+      <Statistics_card
+        img={brandRecognitionimg}
+        content={brandRecognitionContent}
+        position={brandRecognition} />
+      <Statistics_card 
+        img={detailedRecordsimg}
+        content={detailedRecordsContent}
+        position={detailedRecords}/>
+      <Statistics_card
+        img={fullyCustomizableimg}
+        content={fullyCustomizableContent} 
+        position={fullyCustomizable}/>
 
-        </div>
+      </div>
     </>
   )
 }
