@@ -18,7 +18,7 @@ const Hero = () => {
 
           </div>
           
-            <div className='flex justify-center absolute -bottom-[10%] w-full  items-center bg-gray-800 bg-[url(../images/bg-shorten-desktop.svg)] bg-no-repeat h-0 px-[2em] py-[3.5vw] bg-cover rounded-xl'>
+            <div className='flex justify-center absolute -bottom-[10%] w-full  items-center bg-gray-800 bg-[url(../images/bg-shorten-desktop.svg)] bg-no-repeat h-0 px-[2vw] py-[4vw] bg-cover rounded-xl'>
               <Input/>
             </div>
         </div>

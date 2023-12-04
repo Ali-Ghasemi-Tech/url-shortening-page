@@ -36,3 +36,9 @@
 .hover-effect:hover{
     fill: rgb(83, 105, 226);
 }
+
+.error{
+    border:solid 2px rgb(236, 126, 63);
+
+    color:rgb(236, 126, 63);
+}

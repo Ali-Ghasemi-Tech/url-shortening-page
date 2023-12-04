@@ -43,10 +43,20 @@ function Input() {
           const response = await fetch(url, options);
           const data = await response.json();
            setResult (data.result_url);
-          setIsPopupDisplayed(true);           
-          console.log(typeof(result));
-          clearInput();
+           if(result){
+            setIsPopupDisplayed(true);           
+            clearInput();
+            document.getElementById('input').classList.remove('error');
+            document.getElementById('error-text').classList.add('hidden');
+           }else{
+            document.getElementById('input').classList.add('error');
+            document.getElementById('error-text').classList.remove('hidden');
+           }
+          
+
         } catch (error) {
+          document.getElementById('input').classList.add('error');
+          document.getElementById('error-text').classList.remove('hidden');
           console.error(error);
         }
   }
@@ -63,7 +73,9 @@ function Input() {
   return (
     <>
       <div className='flex w-full gap-3 justify-center items-center'>
-          <input onChange={handleChange} id='input' className=' flex-1 py-[1%] pl-8 rounded-lg' style={inputStyle} type="text" placeholder='Shorten a link here...' ></input>
+          <input onChange={handleChange} id='input' className=' flex-1 py-[1%] pl-[1vw] rounded-lg relative' style={inputStyle} type="text" placeholder='Shorten a link here...' >
+          </input>            
+          <span id='error-text' className=' absolute left-[2vw] bottom-[0.5vw] card-text text-orange-500 hidden'>please add a link</span>
         
           <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.1em ,1.4vw ,1.8em)'} border = '8px'/>
           
