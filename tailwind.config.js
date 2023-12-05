@@ -4,6 +4,9 @@ module.exports = {
   './src/components/*.{js,jsx,ts,tsx}'
 ],
   theme: {
+    screens:{
+      'mobile': {'max':'500px'}
+    },
     extend: {},
   },
   plugins: [],
