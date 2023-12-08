@@ -28,11 +28,12 @@ const Navbar = () => {
     const navBg = document.getElementById('nav-bg')
     if(mobileNav){
       if(isOpen){
-        mobileNav.classList.remove('mobile:opacity-0');
+        mobileNav.classList.remove('mobile:hidden');
         navBg.classList.remove('hidden');
 
       }else{
-        mobileNav.classList.add('mobile:opacity-0');
+        
+        mobileNav.classList.add('mobile:hidden');
         navBg.classList.add('hidden');
       }
     }
@@ -40,11 +41,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='flex'>
-        <div id='nav-bg' className='fixed left-0 top-0 right-0 bottom-0 opacity-10 bg-black z-20 hidden transition-all duration-300'></div>
+      <div className='flex w-[15%] items-center'>
         <img src={Logo} className='mr-10 h-fit w-full' alt="" />
       </div>
-      <div id='mobile-nav' className='flex justify-between w-[90%] mobile:flex-col mobile:bg-indigo-950 mobile:fixed left-[27%] mobile:top-[15%] z-20  mobile:w-[30%] rounded-lg mobile:opacity-0 mobile:transition-all mobile:duration-300'>
+
+      <div id='nav-bg' className='fixed left-0 top-0 right-0 bottom-0 opacity-10 bg-black z-20 hidden transition-all duration-300'></div>
+   
+      <div id='mobile-nav' className='flex justify-between w-[90%] mobile:flex-col mobile:bg-indigo-950 mobile:fixed mobile:left-[36%] mobile:top-[15%] z-20 mobile:hidden  mobile:w-[30%] rounded-lg '>
         <ul  className='nav-list flex justify-center items-center '>
             <li className='flex mobile:flex-col mobile:justify-center mobile:items-center gap-[2vw] mobile:gap-0 mobile:border-b mobile:border-gray-100  mobile:mb-[1.5vw] mobile:w-[50%] text-gray-500 mobile:text-gray-400 mobile:font-bold text-lg nav-text '>
               <a className='hover:text-teal-400 transition-all duration-200' href="">Features</a>

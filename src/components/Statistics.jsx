@@ -22,29 +22,28 @@ const fullyCustomizableContent ={
   links, supercharging audience engagement.`
 }
 
-const Statistics = () => {
+const Statistics = ({screen}) => {
   const brandRecognition = {
-    top :'-10vw',
-    left : '0px'
+    top :screen ? '-8vw' :'-10vw',
+    left : screen? '-38vw':'0px'
   }
   const detailedRecords = {
-    top : '-8vw',
-    left: '27.5vw'
+    top :screen ? '60vw': '-8vw',
+    left:screen? '-38vw': '27.5vw'
   }
   const fullyCustomizable = {
-    top: '-6vw',
-    right:'0px'
+    top: screen? '128vw' : '-6vw',
+    right: screen? '-40vw' :'0px'
   }
-  console.log(brandRecognitionContent);
   return (
-    <>
+    <div className='flex flex-col justify-between  items-center w-full h-[90%] gap-10'>
       
-      <div className='flex flex-col justify-center items-center w-[35%] text-center mt-[13%] mb-[5%]'>
+      <div className='flex flex-col justify-center items-center w-[35%] mobile:w-[80%] mobile:mt-[5%] text-center mt-[13%] mb-[5%]'>
           
           <h1 className='font-bold statistics-text whitespace-nowrap overflow-hidden pb-2'>Advanced Statistics</h1>
           <span className='casual-text text-gray-500'>Track how your links are performing across the web with our advanced statistics dashboard</span>
       </div>
-      <div className='w-[80%] bg-teal-400 h-2 mt-[10%] mb-[20%] relative'>
+      <div className='w-[80%] bg-teal-400 h-2 mobile:w-2 mobile:h-[80%] mobile:my-0 mt-[10%] mb-[20%] relative mobile'>
       <Statistics_card
         img={brandRecognitionimg}
         content={brandRecognitionContent}
@@ -59,7 +58,7 @@ const Statistics = () => {
         position={fullyCustomizable}/>
 
       </div>
-    </>
+    </div>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Button from './Button'
 import { useState } from 'react'
 import Popup from './Popup';
+import { useMedia } from 'react-media-hook';
 
 
 
@@ -9,6 +10,8 @@ function Input() {
   const [inputValue , setInputValue] = useState('');
   const [result , setResult] = useState();
   const [isPopupDisplayed , setIsPopupDisplayed] = useState(false);
+
+  const isSmallScreen = useMedia('(max-width:500px)');
 
   const inputStyle ={
     fontSize: 'clamp(0.1em ,1.3vw ,1.4em)', 
@@ -72,12 +75,12 @@ function Input() {
   
   return (
     <>
-      <div className='flex w-full gap-3 justify-center items-center'>
-          <input onChange={handleChange} id='input' className=' flex-1 py-[1%] pl-[1vw] rounded-lg relative' style={inputStyle} type="text" placeholder='Shorten a link here...' >
+      <div className='flex mobile:flex-col  w-full gap-[1vw] justify-center items-center'>
+          <input onChange={handleChange} id='input' className=' flex-1 py-[1%] mobile:py-[2%] pl-[1vw] rounded-lg relative mobile:w-full mobile:rounded-sm' style={inputStyle} type="text" placeholder='Shorten a link here...' >
           </input>            
           <span id='error-text' className=' absolute left-[2vw] bottom-[0.5vw] card-text text-orange-500 hidden'>please add a link</span>
         
-          <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.1em ,1.4vw ,1.8em)'} border = '8px'/>
+          <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.1em ,1.4vw ,1.8em)'} border = '8px' screen={isSmallScreen ? isSmallScreen.matches: null}/>
           
       </div>
       <Popup onClick={handelClick} id = "popup" style = {isPopupDisplayed ? popupDisplayed : popupHidden} input = {inputValue} result={result}/>
