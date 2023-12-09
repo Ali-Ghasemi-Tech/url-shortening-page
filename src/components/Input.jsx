@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useRef } from 'react'
 import Button from './Button'
 import { useState } from 'react'
 import Popup from './Popup';
@@ -10,6 +10,7 @@ function Input() {
   const [inputValue , setInputValue] = useState('');
   const [result , setResult] = useState();
   const [isPopupDisplayed , setIsPopupDisplayed] = useState(false);
+  const [buttonClick , setButtonClick] =useState(false);
 
   const isSmallScreen = useMedia('(max-width:500px)');
 
@@ -46,15 +47,7 @@ function Input() {
           const response = await fetch(url, options);
           const data = await response.json();
            setResult (data.result_url);
-           if(result){
-            setIsPopupDisplayed(true);           
-            clearInput();
-            document.getElementById('input').classList.remove('error');
-            document.getElementById('error-text').classList.add('hidden');
-           }else{
-            document.getElementById('input').classList.add('error');
-            document.getElementById('error-text').classList.remove('hidden');
-           }
+           console.log(data.result_url)
           
 
         } catch (error) {
@@ -64,12 +57,41 @@ function Input() {
         }
   }
 
+
+  useEffect(() => {
+   
+    if(buttonClick){
+        if(result && result !== undefined){
+          setIsPopupDisplayed(true);           
+          document.getElementById('input').classList.remove('error');
+          document.getElementById('error-text').classList.add('hidden');
+          clearInput();
+          
+         }else{
+          console.log('why?')
+          document.getElementById('input').classList.add('error');
+          document.getElementById('error-text').classList.remove('hidden');
+        }  
+      }
+      
+    
+  } , [result , buttonClick])
+
   function clearInput(){
     document.getElementById("input").value = '';
   }
 
   function handelClick() {
+    setInputValue(null);
+    setResult(null);
     setIsPopupDisplayed(false);
+    setButtonClick(false);
+  }
+  function clickButton(){
+    callApi();
+    setTimeout(() => {
+      setButtonClick(true);
+    }, 3000);
   }
 
   
@@ -80,7 +102,7 @@ function Input() {
           </input>            
           <span id='error-text' className=' absolute left-[2vw] bottom-[0.5vw] card-text text-orange-500 hidden'>please add a link</span>
         
-          <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.5em ,1.4vw ,1.8em)'} border = '8px' screen={isSmallScreen ? isSmallScreen.matches: null}/>
+          <Button onClick={clickButton} content={'Shorten it!'} fontSize={'clamp(0.5em ,1.4vw ,1.8em)'} border = '8px' screen={isSmallScreen ? isSmallScreen.matches: null}/>
           
       </div>
       <Popup onClick={handelClick} id = "popup" style = {isPopupDisplayed ? popupDisplayed : popupHidden} input = {inputValue} result={result}/>
