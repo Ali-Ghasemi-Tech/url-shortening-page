@@ -6,11 +6,11 @@ import Footer from './components/Footer';
 import { useMedia } from 'react-media-hook';
 
 function  App() {
-  const isSmallScreen = useMedia('(max-width:500px)')
+  const isSmallScreen = useMedia('(max-width:680px)')
   
 
   return (
-    <body className='flex flex-col items-center pt-[60px] '>
+    <body className='flex flex-col items-center pt-[60px] overflow-hidden'>
       <header className='w-[80%] flex justify-between'>
         <Navbar />
       </header>

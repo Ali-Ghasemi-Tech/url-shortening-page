@@ -12,7 +12,7 @@ function Input() {
   const [isPopupDisplayed , setIsPopupDisplayed] = useState(false);
   const [buttonClick , setButtonClick] =useState(false);
 
-  const isSmallScreen = useMedia('(max-width:500px)');
+  const isSmallScreen = useMedia('(max-width:680px)');
 
   const inputStyle ={
     fontSize: 'clamp(0.5em ,1.3vw ,1.4em)', 
