@@ -5,7 +5,7 @@ import Input from './Input'
 
 const Hero = ({screen}) => {
   return (
-        <div className='pb-20 mobile:pb-[33vw] relative flex justify-center h-full'>
+        <div className='pb-20 mobile:pb-[35vw] relative flex justify-center h-full'>
           <div className=' flex justify-start w-full h-full hero-height mobile:flex-col-reverse mobile:justify-center mobile:items-center gap-6'>
             <div className='flex flex-col h-auto  pt-[5%] items-start mobile:items-center mobile:text-center hero w-[50%] mobile:w-full'>
               <h1 className='font-bold leading-tight mb-2'>More than just shorter links</h1>

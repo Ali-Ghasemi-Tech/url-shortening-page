@@ -14,7 +14,7 @@ function Input() {
   const isSmallScreen = useMedia('(max-width:500px)');
 
   const inputStyle ={
-    fontSize: 'clamp(0.1em ,1.3vw ,1.4em)', 
+    fontSize: 'clamp(0.5em ,1.3vw ,1.4em)', 
   }
   const popupHidden = {
     display : "none"
@@ -80,7 +80,7 @@ function Input() {
           </input>            
           <span id='error-text' className=' absolute left-[2vw] bottom-[0.5vw] card-text text-orange-500 hidden'>please add a link</span>
         
-          <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.1em ,1.4vw ,1.8em)'} border = '8px' screen={isSmallScreen ? isSmallScreen.matches: null}/>
+          <Button onClick={callApi} content={'Shorten it!'} fontSize={'clamp(0.5em ,1.4vw ,1.8em)'} border = '8px' screen={isSmallScreen ? isSmallScreen.matches: null}/>
           
       </div>
       <Popup onClick={handelClick} id = "popup" style = {isPopupDisplayed ? popupDisplayed : popupHidden} input = {inputValue} result={result}/>
